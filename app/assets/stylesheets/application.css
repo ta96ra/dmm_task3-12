@@ -19,23 +19,116 @@ body{
   margin: 0;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 100%;
+  box-sizing: border-box;
 }
-h1,p,a{
-  color: #333;  
+h1,h2,h4,p,a{
+  color: #333; 
+  margin: 0;
+}
+h4,p,a,li{
+  font-size: .75rem;  
+  font-weight: normal;
 }
 h1{
   font-size: 1.5rem;
-  padding-left: 33px;
 }
-p{
-  padding-left: 66px;
-  font-size: .75rem;
-  line-height: 4;
+h2{
+  font-size: 1.25rem;  
+}
+h4,ul{
+  margin: 0;  
 }
 span{
   font-weight: bold;  
 }
-a{
-  padding-left: 66px;
+a:hover{
+  display: inline-block;
+  background: #333;
+  color: #fff;
+}
+.wrapper{
+  padding: 30px;
+}
+.link{
+  padding-top: 10px;  
+}
+/*エラー表示*/
+.error-box{
+  width: 100%;
+  max-width: 500px;
+  height: 120px;
+  margin-top: 20px;
+  border: 2px solid red;  
+}
+.error-box p{
+  padding: 5px 5px 5px 10px;
+  color: #fff;
+  font-weight: bold;
+  background: red;
+}
+.error-box ul{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 98px;
+  padding-left: 60px;
+}
+.error-box li{
+  line-height: 1.75;
+  list-style: square;
+}
+
+/*Topページ*/
+.top-text{
+  padding-left: 30px;
+}
+.top-text p{
+  line-height: 4;
+}
+
+/*Booksページ*/
+table{
+  width: 100%;
+  max-width: 750px;
+  margin: 20px 0;
+}
+
+th,td{
   font-size: .75rem;
 }
+td:first-of-type{
+  width: 25%;
+  /*width: calc((100% - 150px) / 3;*/
+}
+td:last-of-type{
+  width: 150px;
+}
+td p{
+  padding: 5px 0;  
+}
+td p a{
+  display: inline-block;
+  margin-right: 5px;
+}
+form{
+  margin: 20px 0;
+}
+input,textarea{
+  margin-bottom: 10px;  
+}
+
+/*showページ*/
+.success{
+  color: green;  
+}
+.show-text{
+  margin-left: 30px;
+}
+.show-text p{
+  padding-bottom: 25px;  
+}
+.border{
+  font-weight: normal;  
+}
+
+/*editページ*/

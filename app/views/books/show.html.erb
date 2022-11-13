@@ -1,2 +1,18 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<div class="wrapper">
+  <div class="show-text">
+  <% flash.each do |message_type, message|%>
+    <p class="success"><%= message %></p>  
+    <!--create,updateアクションで定義したflashのメッセージを表示-->
+  <% end %>  
+    <p><strong>Title:</strong><%= @book.title %></p>
+    <p><strong>Body:</strong><%= @book.body %></p>
+  </div>
+
+  <div class="link">
+    <%= link_to 'Edit',edit_book_path(@book.id) %>
+    <!--showアクションの@book-->
+    <span class="border">|</span>
+    <%= link_to 'Back',books_path%>
+  </div>
+
+</div>

@@ -1,2 +1,29 @@
-<h1>Books#edit</h1>
-<p>Find me in app/views/books/edit.html.erb</p>
+<div class="wrapper">
+  <h1>Editing Book</h1>
+  <% if @book.errors.any? %>
+    <div class="error-box">
+      <p><%= @book.errors.count %> errors prohibited this book from being saved:</p>
+      <ul>
+        <% @book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= form_with model:@book,url:book_path(@book.id), method: :patch do |f| %>  
+  <!--modelはeditアクションのidを取得、urlはbooks#updateのas:book-->
+    <h4>Title</h4>
+    <%= f.text_field:title %>
+    <h4>Body</h4>
+    <%= f.text_area:body %>
+    <div class="submit">
+      <%= f.submit 'Update Book' %>
+    </div>
+  <% end %>
+  <div class="link">
+    <%= link_to 'show',book_path(@book.id)%>
+    <!--editアクションの@book-->
+    <span class="border">|</span>
+    <%= link_to 'Back',books_path %>
+  </div>
+</div>
